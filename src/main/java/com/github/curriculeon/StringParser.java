@@ -27,7 +27,6 @@ public class StringParser {
     public static Integer[] parseIntegers(String input) {
 
 
-
         return null;
     }
 
@@ -38,6 +37,9 @@ public class StringParser {
     }
 
     public static String[] parseStrings(String input) {
+        if (input == null) {
+            return null;
+        }
         String[] stringCharacters = input.split("");
         int numberOfCharacters = stringCharacters.length;
         String[] result = new String[numberOfCharacters];
@@ -48,9 +50,7 @@ public class StringParser {
 
 
         }
-        if (input == null) {
-            return null;
-        }
+       
         return result;
     }
 }
