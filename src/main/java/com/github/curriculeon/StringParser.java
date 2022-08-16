@@ -38,7 +38,19 @@ public class StringParser {
     }
 
     public static String[] parseStrings(String input) {
-        String[] stringCharacters = new String[input]
-        return null;
+        String[] stringCharacters = input.split("");
+        int numberOfCharacters = stringCharacters.length;
+        String[] result = new String[numberOfCharacters];
+        int numberOfTimesLooped = 0;
+        while (numberOfTimesLooped < numberOfCharacters) {
+            result[numberOfTimesLooped] = stringCharacters[numberOfTimesLooped];
+            numberOfTimesLooped = numberOfTimesLooped + 1;
+
+
+        }
+        if (input == null) {
+            return null;
+        }
+        return result;
     }
 }
