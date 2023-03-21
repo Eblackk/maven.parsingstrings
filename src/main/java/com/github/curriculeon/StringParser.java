@@ -1,5 +1,7 @@
 package com.github.curriculeon;
 
+import com.sun.org.apache.xalan.internal.xsltc.util.IntegerArray;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -25,9 +27,24 @@ public class StringParser {
     }
 
     public static Integer[] parseIntegers(String input) {
+        if (input == null) {
+            return null;
+        }
+
+        input = input.replace(" ","");
+        char[] splitInput = input.toCharArray();
 
 
-        return null;
+        Integer[] result = new Integer[splitInput.length];
+
+        for (int i = 0; i < splitInput.length; i++) {
+            Character currentCharacter = splitInput[i];
+            result[i] = Integer.parseInt(currentCharacter.toString());
+
+        }
+
+
+        return result ;
     }
 
     public static List<String> toList(String[] input) {
@@ -50,7 +67,7 @@ public class StringParser {
 
 
         }
-       
+
         return result;
     }
 }
